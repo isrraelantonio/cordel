@@ -82,13 +82,13 @@ section p{
     padding-bottom: 30px;
 }
 section#img1{
-    background-image: url(../imagens/cacto02.jpg);
+    background-image: url(../imagens/cacto01.jpg);
     background-position: center center;
     background-attachment: fixed;
     
 }
 section#img2{
-    background-image: url(../imagens/escrita01.jpg);
+    background-image: url(../imagens/escrita02.jpg);
     background-position: center center;
     background-attachment: fixed;
 }
