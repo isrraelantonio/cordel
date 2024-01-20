@@ -1,21 +1,21 @@
-@charset " UTF-8";
+@charset " UTF-8"; /*Importamos características como os caracteres padrão usado e fontes importadas para o conteúdo  */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap'); /*Importamos a fonte a partir da url do google font nesse caso usamos o @import url () */
 
-@import url('https://fonts.googleapis.com/css2?família=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?família=Sriracha&display=swap'); /*Importamos a fonte a partir da url do google font nesse caso usamos o @import url () */
 
-@font-face {
+@font-face { /*Importamos a fonte de um arquivo do tipo TrueType de dentro dos arquivos da página usamos o @font-face onde também especificamos como a fámilia irá se chamar e também o diretório onde está presente e o seu formato */
     font-family:'Xilosa';
     src: url('../fonte/xilosa_.ttf') format('truetype');
 }
 
-*{
+*{ /* O * define contigurações para a apresentação da página dentro do navegador, nesse caso tiramos todas as margins e paddings que poderiam surgir  */
     margin: 0px;
     padding: 0px;
    
 }
 
-:root{
+:root{ /* o root é um recurso para criação de variáveis dentro da página para facilitar o uso de recursos e diminuir a necessidade de digitar tantas linhas de códigos nesse caso atribuímos a algumas variáveis as familias de fontes que as mesmas serão */
     --fonte1:  Verdana, Geneva, Tahoma, sans-serif;
     --fonte2:  'Syne Tactile', system-ui;
     --fonte3: 'Sriracha', cursiva;
@@ -24,84 +24,87 @@
 html, body{ /* essas definições são para tanto o hatml como também o body da página */
     background-color: darkgray; /*Aqui definimos a cor de fundo do arquivo */
     min-height: 100vh  ;/*Aqui definimos o tamanho da viewport da página em 100% de altura vh se fosse largura seria lh*/
-    font-family: var(--fonte1);
+    font-family: var(--fonte1); /*definimos a fonte padrão para todo o html e body caso as insseridas por algum motivo não funcionem  */
     
 }
-header{
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: var(--fonte2);
-    font-size: 4vh;
+header{ /* Nesse caso temos a definição para o cabeçalho da págia  essa será a configuração padrão, depois cada elemento do mesmo será definido de forma particular a desejo do desenvolvedor*/
+    background-color: black;  /* backgroundo com cor sólida preta*/
+    color: white; /* cor do texto branca */
+    text-align: center; /* alinhamento do texto dentro do header */
+    font-family: var(--fonte2); /* fonte usada */
+    font-size: 4vh;  /* sua ocupação em 4% dentro da viewport do header para adaptação em diferentes aparelhos */
     
 }
 header > h1{
-    /* */
-    padding-top: 50px;
+    /* configurações para o nosso h1 do header*/
+    padding-top: 50px; 
     font-variant: small-caps; /*Nesse caso temos todas as letras transformadas em maiúsculas, porém as primeiras a iniciar cada palavra tem um tamanho maior, isso, se no html essas mesamas sejam maiúsculas e as outras minúsculas . poderiamos usar o text-transforme: uppercase, se usarmos essa tag para algum conteúdo, todo será transformado em letras maiúsculas, se definirmos lowercase teremos a transformação para letras minúsculas. nesse caso não é tão interessante usá-lo pois  a palavra fica meio grosseira e da forma do código fica mais leve */ 
 }
 
-header > p {
+header > p {  /* definição de padding para o parágrafo dentro do header */
     padding: 10px 0px 50px 0px;
 }
-header a, footer a {
-    color: white;
-    text-decoration: none;
+header a, footer a { /* Definimos uma mesma configurção para o link dentro do header e também footer*/
+    color: white; /*Cor para o texto do link*/
+    text-decoration: none; /* tiramos a decoração do mesmo que por padrão é underline*/
 }
-header a:hover, footer a:hover{
-    text-decoration: underline;
+header a:hover, footer a:hover{ /* Definição para o link do header e footer quando passado o cursor do mouse por cima */
+    text-decoration: underline; /* Definimos decoração para o link.  Nesse caso temos o underline */
 }
-section{
-    padding-top: 10vh;
+section{ /* Nesse caso temos a definição para todos os sections da págia,  essa será a configuração padrão, depois, cada elemento do mesmo será definido de forma particular a desejo do desenvolvedor*/
+    padding-top: 10vh; 
     padding-bottom: 10vh;
-    line-height: 2em;
-    font-family: var(--fonte4);
-    font-size: 4vh;
+    line-height: 2em; /* definimos o espaçamento entre as linhas do texto*/
+    font-family: var(--fonte4);/* definimos a fonte usada em todos os sections presentes na página */
+    font-size: 4vh; /* Definimso o tamanho do texto em 4% dentro da viewport do section para adaptação em diferentes aparelhos */
 }
-section.normal {
+section.normal { /* definições para as sectins da classe normal*/
     background-color: white;
     color: black;
     padding-left: 30px;
 }
-section.imagem {
+
+section#img1{ /* Definições para o section de id img1*/
+    background-image: url(../imagens/cacto01.jpg); /* Imagem inserida no mesmo*/
+    background-position: center center; /*Posicionamento da imagem dentro do section*/
     
-    background-color: #090909d3;
-    color: white;
+    
+}
+section#img2{ /* Definições para o section de id img1*/
+    background-image: url(../imagens/escrita02.jpg); /* Imagem inserida no mesmo*/
+    background-position: center center; /*Posicionamento da imagem dentro do section*/
+    
+}
+
+section.imagem {/* definições para as sections da classe imagem*/
+    
+    background-color: #090909d3;  /* Caso a imagem nãocarregue, essa será a cor do background  */
+    color: white;  /* Definição para a cor do texto */
     padding-left: 15px;
-    background-size: cover;
-    
-    box-shadow: inset 6px 6px 13px 0px black
+    background-size: cover; /* Como já sabemos o cover faz a adaptação do background dentro da viewport do section para se adaptar a todas as mudanças no tanho do tamanho de tela*/
+    background-attachment: fixed; /* AQUI QUE NÓS CRIAMOS O EFEITO PARALAX ONDE A IMAGEM SE MANTÉM FIXA E A BARRA DE ROLAGEM ROLA SOBRE ELA */ 
+    box-shadow: inset 6px 6px 13px 0px black /* definimos um box shadow para o section perceba que usamos o inset  */
 }
-section.imagem p{
-    background-color: rgba(0 0 0 / 48%);
-    display: inline-block;
-    padding: 15px;
-   
-}
-section p{
+
+section p{   /* Definiçõe padrão para os parágrafos dentro do section */
     padding-bottom: 30px;
 }
-section#img1{
-    background-image: url(../imagens/cacto01.jpg);
-    background-position: center center;
-    background-attachment: fixed;
-    
-}
-section#img2{
-    background-image: url(../imagens/escrita02.jpg);
-    background-position: center center;
-    background-attachment: fixed;
+section.imagem p{  /* Definiçõe para os parágrafos dentro dos sections de classe imagem */
+    background-color: rgba(0 0 0 / 48%);
+    display: inline-block;  /* O display inline-block, adapta o conteúdo dentro da página para não haver as quebras de linhas em caso da tela diminuir, ou seja, irá se adaptar as várias telas */
+    padding: 15px;  /* Definimos um pading para o parágrafo em relação ao bloco em que se encontra  */
+   
 }
 
 
-footer{
+footer{ /* Aqui temos a configuração para o footer */
     padding: 10px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: var(--fonte2);
-    font-size: 3vh;
+    background-color: black;/* cor do background */
+    color: white; /* cor da fonte */
+    text-align: center; /* seu alinhamento dentro do footer */
+    font-family: var(--fonte2); /* A fonte usada no mesmo */
+    font-size: 3vh; /* sua ocupação em 3% dentro da viewport do footer para adaptação em diferentes aparelhos */
 }
 footer a{
-    font-variant: small-caps;
+    font-variant: small-caps;  /*Nesse caso temos todas as letras transformadas em maiúsculas, porém as primeiras a iniciar cada palavra tem um tamanho maior, isso, se no html essas mesamas sejam maiúsculas e as outras minúsculas . poderiamos usar o text-transforme: uppercase, se usarmos essa tag para algum conteúdo, todo será transformado em letras maiúsculas, se definirmos lowercase teremos a transformação para letras minúsculas. nesse caso não é tão interessante usá-lo pois  a palavra fica meio grosseira e da forma do código fica mais leve */ 
 }
